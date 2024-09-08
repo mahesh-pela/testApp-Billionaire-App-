@@ -1,6 +1,7 @@
 import 'package:billionaire_app/widgets/buttons.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Dashboard extends StatefulWidget {
@@ -65,7 +66,7 @@ class _DashboardState extends State<Dashboard> {
             children: [
               SizedBox(height: 40,),
               Text('Bank Balance', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-              Text('\$$totalAmount', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
+              Text('\$${NumberFormat.simpleCurrency(name: '').format(totalAmount)}', style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),),
               SizedBox(height: 30,),
 
               ///----buttons from the child class----
